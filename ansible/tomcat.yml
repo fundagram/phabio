@@ -1,0 +1,29 @@
+---
+- hosts: all
+  vars:
+   - tomcatdload: http://apache.mirror.rafal.ca/tomcat/tomcat-8/v8.0.26/bin/apache-tomcat-8.0.26.tar.gz
+   - tarfile: apache-tomcat-8.0.26.tar.gz
+  tasks:
+   - name: Install Unzip
+     apt:  pkg=unzip state=installed update_cache=true
+
+   - name: Install JRE
+     apt: pkg=default-jdk state=installed update_cache=true
+
+   - name: Download File
+     get_url: url={{ tomcatdload  }} dest=/usr/local/
+ 
+   - name: Extract File
+     unarchive: src=/usr/local/{{ tarfile }} dest=/usr/local/  copy=no      
+
+   - name: Create Symlink
+     file: src=/usr/local/apache-tomcat-8.0.26 force=yes  dest=/usr/local/tomcat state=link
+
+   - name: Set Mode Tomcat
+     file:  path=/usr/local/tomcat/bin/startup.sh mode=0777
+
+   - name: Set Mode 2
+     file:  path=/usr/local/tomcat/bin/shutdown.sh mode=0777
+
+   - name: Run Tomcat
+     shell: sudo nohup /usr/local/tomcat/bin/catalina.sh start
