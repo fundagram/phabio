@@ -29,6 +29,12 @@ dev:
 
 deploy:
   steps:
+
+    - script:
+        name:  Install Zip for transport and zip step.
+        code: | 
+           sudo apt-get -y install zip
+
     - script:
         name: debug step 1
         code: | 
