@@ -40,9 +40,11 @@ deploy:
         code: | 
            if [ -d $WERCKER_OUTPUT_DIR ]; then ls $WERCKER_OUTPUT_DIR; fi;
 
-    - tcnksm/zip:
-      input: $WERCKER_SOURCE_DIR
-      output: $WERCKER_OUTPUT_DIR
+    - script:
+        name: Zip Up the app
+        code: | 
+           cd $WERCKER_SOURCE_DIR
+           zip -r $WERCKER_OUTPUT_DIR/myapp.zip .
 
     - script:
         name: debug step 2
