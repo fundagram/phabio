@@ -32,19 +32,20 @@ deploy:
     - script:
         name: debug step 1
         code: | 
-           if [ -d $WERCKER_OUTPUT_DIR/pkg ]; then ls $WERCKER_OUTPUT_DIR/pkg; fi;
+           if [ -d $WERCKER_OUTPUT_DIR ]; then ls $WERCKER_OUTPUT_DIR; fi;
 
     - tcnksm/zip:
-      input: $WERCKER_OUTPUT_DIR/pkg
-      output: $WERCKER_OUTPUT_DIR/dist
+      input: $WERCKER_SOURCE_DIR
+      output: $WERCKER_OUTPUT_DIR
 
     - script:
         name: debug step 2
         code: | 
-          ls $WERCKER_OUTPUT_DIR/dist
+          ls $WERCKER_OUTPUT_DIR
 
     - s3sync:
       key-id: $AWS_ACCESS_KEY
       key-secret: $AWS_SECRET_KEY
       bucket-url: $S3_BUCKET_NAME
+      source-dir: $WERCKER_OUTPUT_DIR
  
