@@ -29,7 +29,22 @@ dev:
 
 deploy:
   steps:
+    - script:
+        name: debug step 1
+        code: | 
+          ls $WERCKER_OUTPUT_DIR/pkg
+
+    - tcnksm/zip:
+      input: $WERCKER_OUTPUT_DIR/pkg
+      output: $WERCKER_OUTPUT_DIR/dist
+
+    - script:
+        name: debug step 2
+        code: | 
+          ls $WERCKER_OUTPUT_DIR/dist
+
     - s3sync:
       key-id: $AWS_ACCESS_KEY
       key-secret: $AWS_SECRET_KEY
       bucket-url: $S3_BUCKET_NAME
+ 

@@ -10,3 +10,21 @@
 2015-11-06 01:23:35,810 INFO spawned: 'nginx' with pid 35
 2015-11-06 01:23:36,956 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2015-11-06 01:23:36,957 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-06 23:04:36,526 CRIT Supervisor running as root (no user in config file)
+2015-11-06 23:04:36,534 INFO supervisord started with pid 17
+2015-11-06 23:04:37,535 INFO spawned: 'flask' with pid 35
+2015-11-06 23:04:37,540 INFO spawned: 'nginx' with pid 36
+2015-11-06 23:04:38,656 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-06 23:04:38,656 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-06 23:18:00,200 CRIT Supervisor running as root (no user in config file)
+2015-11-06 23:18:00,205 INFO supervisord started with pid 16
+2015-11-06 23:18:01,209 INFO spawned: 'flask' with pid 35
+2015-11-06 23:18:01,211 INFO spawned: 'nginx' with pid 36
+2015-11-06 23:18:02,326 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-06 23:18:02,326 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-07 02:54:24,616 CRIT Supervisor running as root (no user in config file)
+2015-11-07 02:54:24,621 INFO supervisord started with pid 16
+2015-11-07 02:54:25,623 INFO spawned: 'flask' with pid 34
+2015-11-07 02:54:25,627 INFO spawned: 'nginx' with pid 35
+2015-11-07 02:54:26,745 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-07 02:54:26,745 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
