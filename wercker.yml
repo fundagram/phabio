@@ -53,5 +53,5 @@ deploy:
       key-id: $AWS_ACCESS_KEY
       key-secret: $AWS_SECRET_KEY
       bucket-url: $S3_BUCKET_NAME
-      source-dir: $WERCKER_OUTPUT_DIR
+      
  
