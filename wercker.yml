@@ -32,7 +32,7 @@ deploy:
     - script:
         name: debug step 1
         code: | 
-           if[-d $WERCKER_OUTPUT_DIR/pkg]; then ls $WERCKER_OUTPUT_DIR/pkg; fi;
+           if [ -d $WERCKER_OUTPUT_DIR/pkg ]; then ls $WERCKER_OUTPUT_DIR/pkg; fi;
 
     - tcnksm/zip:
       input: $WERCKER_OUTPUT_DIR/pkg
