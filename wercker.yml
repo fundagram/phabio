@@ -77,6 +77,19 @@ deploy:
       source-dir: ../output
 
     - script:
+        name: Create AWS cred file.
+        code: |
+          mkdir ../source/aws
+          touch ../source/aws/config
+          touch ../source/aws/credentials
+          printf "[default]\n" >> ../source/aws/credentials
+          printf "aws_access_key_id=$AWS_ACCESS_KEY \n" >> ../source/aws/credentials 
+          printf "aws_secret_access_key=$AWS_SECRET_KEY " >> ../source/aws/credentials 
+          printf "[default]\n" >> ../source/aws/config
+          printf "region=us-east-1" >> ../source/aws/config
+          export AWS_CONFIG_FILE =  ../source/aws/credentials
+
+    - script:
         name: Create EB Config File
         code: |
           mkdir ../source/.elasticbeanstalk
@@ -90,7 +103,7 @@ deploy:
       code: |
         cd ../source
         echo "**** DEPLOYING FROM HERE ****"
-        export AWS_SECRET_KEY_ID=$AWS_ACCESS_KEY
+        export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
         export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
         ls -all       
         printf "1\n1\n\9\n1\ny\n6\n" | eb init
