@@ -23,6 +23,23 @@ dev:
           # commands below are now built into the docker for auto start , neil
           # sudo service nginx start &
           # sudo python /deploy/app/hello.py &
+
+    - script:
+        name:  Install Git for automated EB transport .
+        code: | 
+           sudo apt-get -y install git
+
+    - script:
+        name: Create AWS cred file.
+        code: |
+          mkdir ~/.aws
+          touch ~/.aws/config
+          touch ~/.aws/credentials
+          printf "[default]\n" >> ~/.aws/credentials
+          printf "aws_access_key_id=thecode \n" >> ~/.aws/credentials 
+          printf "aws_access_key_id=KEY " >> ~/.aws/credentials 
+          printf "[default]\n" >> ~/.aws/config
+          printf "region=us-east-1" >> ~/.aws/config
     
     - internal/shell
 
@@ -34,19 +51,6 @@ deploy:
         name:  Install Git for automated EB transport .
         code: | 
            sudo apt-get -y install git
-
-
-    - script:
-        name: Create AWS cred file.
-        code: |
-          mkdir ~/.aws
-          touch ~/.aws/config
-          touch ~/.aws/credentials
-          printf "[default]\n" >> ~/.aws/credentials
-          printf "aws_access_key_id=$AWS_ACCESS_KEY \n" >> ~/.aws/credentials 
-          printf "aws_access_key_id=$AWS_SECRET_KEY " >> ~/.aws/credentials 
-          printf "[default]\n" >> ~/.aws/config
-          printf "region=us-east-1" >> ~/.aws/config
 
 
     - script:
@@ -74,7 +78,6 @@ deploy:
     - script:
       code: |
         cd ../source
-        ls ~/.aws
         echo "**** DEPLOYING FROM HERE ****"
         ls
         eb init phabio-dev
