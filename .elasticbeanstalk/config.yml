@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: phabio-dev
+global:
+  application_name: phabio
+  default_ec2_keyname: nintendo
+  default_platform: Docker 1.7.1
+  default_region: us-east-1
+  profile: test
+  sc: git
