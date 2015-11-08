@@ -35,6 +35,20 @@ deploy:
         code: | 
            sudo apt-get -y install git
 
+
+    - script:
+        name: Create AWS cred file.
+        code: |
+          mkdir ~/.aws
+          touch ~/.aws/config
+          touch ~/.aws/credentials
+          printf "[default]\n" >> ~/.aws/credentials
+          printf "aws_access_key_id=$AWS_ACCESS_KEY \n" >> ~/.aws/credentials 
+          printf "aws_access_key_id=$AWS_SECRET_KEY " >> ~/.aws/credentials 
+          printf "[default]\n" >> ~/.aws/config
+          printf "region=us-east-1" >> ~/.aws/config
+        
+
     - script:
         name: debug step 1
         code: | 
@@ -57,11 +71,7 @@ deploy:
       bucket-url: $S3_BUCKET_NAME
       source-dir: ../output
 
-    - mrono/elastic-beanstalk-deploy:
-            key: $AWS_ACCESS_KEY
-            secret: $AWS_SECRET_KEY
-            app_name: phabio
-            env_name: phabio-dev
-            region: us-east-1
-      
+    - script:
+      code: |
+        eb deploy phabio-dev
  
