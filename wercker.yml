@@ -56,5 +56,12 @@ deploy:
       key-secret: $AWS_SECRET_KEY
       bucket-url: $S3_BUCKET_NAME
       source-dir: ../output
+
+    - mrono/elastic-beanstalk-deploy:
+            key: $AWS_ACCESS_KEY
+            secret: $AWS_SECRET_KEY
+            app_name: phabio
+            env_name: staging
+            region: us-east-1
       
  
