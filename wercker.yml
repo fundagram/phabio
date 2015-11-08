@@ -23,11 +23,6 @@ dev:
           # commands below are now built into the docker for auto start , neil
           # sudo service nginx start &
           # sudo python /deploy/app/hello.py &
-
-    - script:
-        name:  Install Git for automated EB transport .
-        code: | 
-           sudo apt-get -y install git
     
     - internal/shell
 

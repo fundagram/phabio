@@ -2,8 +2,8 @@ import boto3
 import botocore.session
 
 session = botocore.session.get_session()
-session.profile = 'test'
-boto3.setup_default_session(region_name='us-east-1', botocore_session=session)
+session.profile = 'default'
+boto3.setup_default_session(region_name='us-east-1', botocore_session=session )
 
 
 def installLocalCreds():

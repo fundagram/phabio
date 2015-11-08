@@ -80,3 +80,42 @@
 2015-11-08 04:22:35,237 INFO spawned: 'flask' with pid 56
 2015-11-08 04:22:35,407 INFO exited: flask (exit status 1; not expected)
 2015-11-08 04:22:36,409 INFO gave up: flask entered FATAL state, too many start retries too quickly
+2015-11-08 21:23:38,117 CRIT Supervisor running as root (no user in config file)
+2015-11-08 21:23:38,122 INFO supervisord started with pid 14
+2015-11-08 21:23:39,125 INFO spawned: 'flask' with pid 32
+2015-11-08 21:23:39,128 INFO spawned: 'nginx' with pid 33
+2015-11-08 21:23:39,338 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:23:40,342 INFO spawned: 'flask' with pid 40
+2015-11-08 21:23:40,344 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-08 21:23:40,515 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:23:42,519 INFO spawned: 'flask' with pid 43
+2015-11-08 21:23:42,688 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:23:45,693 INFO spawned: 'flask' with pid 46
+2015-11-08 21:23:45,872 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:23:46,873 INFO gave up: flask entered FATAL state, too many start retries too quickly
+2015-11-08 21:31:47,568 CRIT Supervisor running as root (no user in config file)
+2015-11-08 21:31:47,573 INFO supervisord started with pid 14
+2015-11-08 21:31:48,576 INFO spawned: 'flask' with pid 33
+2015-11-08 21:31:48,578 INFO spawned: 'nginx' with pid 34
+2015-11-08 21:31:48,884 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:31:49,887 INFO spawned: 'flask' with pid 41
+2015-11-08 21:31:49,888 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-08 21:31:50,066 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:31:52,070 INFO spawned: 'flask' with pid 44
+2015-11-08 21:31:52,249 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:31:55,254 INFO spawned: 'flask' with pid 47
+2015-11-08 21:31:55,434 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:31:56,437 INFO gave up: flask entered FATAL state, too many start retries too quickly
+2015-11-08 21:36:45,032 CRIT Supervisor running as root (no user in config file)
+2015-11-08 21:36:45,037 INFO supervisord started with pid 15
+2015-11-08 21:36:46,039 INFO spawned: 'flask' with pid 33
+2015-11-08 21:36:46,042 INFO spawned: 'nginx' with pid 34
+2015-11-08 21:36:46,270 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:36:47,273 INFO spawned: 'flask' with pid 41
+2015-11-08 21:36:47,274 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-11-08 21:36:47,444 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:36:49,448 INFO spawned: 'flask' with pid 44
+2015-11-08 21:36:49,634 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:36:52,640 INFO spawned: 'flask' with pid 49
+2015-11-08 21:36:52,819 INFO exited: flask (exit status 1; not expected)
+2015-11-08 21:36:53,820 INFO gave up: flask entered FATAL state, too many start retries too quickly
