@@ -2,7 +2,7 @@ import boto3
 import botocore.session
 
 session = botocore.session.get_session()
-session.profile = 'default'
+#session.profile = 'default'
 boto3.setup_default_session(region_name='us-east-1', botocore_session=session )
 
 
@@ -14,7 +14,7 @@ def listS3():
     buckets = []
     for bucket in s3.buckets.all():
         print(bucket.name)
-        bucket.append[bucket.name]
+        buckets.append(bucket.name)
     return buckets
 
 
