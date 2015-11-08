@@ -74,8 +74,9 @@ deploy:
     - script:
       code: |
         cd ../source
+        ls ~/.aws
         echo "**** DEPLOYING FROM HERE ****"
         ls
-        eb init phabio-dev 
+        eb init phabio-dev
         eb deploy phabio-dev
  
