@@ -68,21 +68,7 @@ deploy:
         name: debug step 2
         code: | 
           ls $WERCKER_OUTPUT_DIR
-
-
-    - script:
-        name: Create AWS cred file.
-        code: |
-          mkdir ~/.aws
-          touch ~/.aws/config
-          touch ~/.aws/credentials
-          printf "[default]\n" >> ~/.aws/credentials
-          printf "aws_access_key_id=$AWS_ACCESS_KEY \n" >> ~/.aws/credentials 
-          printf "aws_access_key_id=$AWS_SECRET_KEY \n" >> ~/.aws/credentials 
-          printf "[default]\n" >> ~/.aws/config
-          printf "region=us-east-1 \n" >> ~/.aws/config
-          ls ~/.aws
-          aws configure
+  
 
     - s3sync:
       key-id: $AWS_ACCESS_KEY
@@ -95,17 +81,12 @@ deploy:
       code: |
         cd ../source
         echo "**** DEPLOYING FROM HERE ****"
+        export AWS_SECRET_KEY_ID=$AWS_ACCESS_KEY
+        export AWS_SECRET_ACCESS_KEY_KEY=$AWS_SECRET_KEY
         ls
         eb init phabio-dev
         eb deploy phabio-dev
 
 
-    - script:
-      name: EB DEPLOY
-      code: |
-        cd ../source
-        echo "**** DEPLOYING FROM HERE ****"
-        ls
-        eb init phabio-dev
-        eb deploy phabio-dev
+    
  
