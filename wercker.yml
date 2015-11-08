@@ -76,5 +76,6 @@ deploy:
         cd ../source
         echo "**** DEPLOYING FROM HERE ****"
         ls
+        eb init phabio-dev 
         eb deploy phabio-dev
  
