@@ -9,7 +9,7 @@ FROM ubuntu:14.04
 # ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get install -y python python-pip python-virtualenv python-dev python-crypto nginx supervisor curl locate awscli zip
+RUN apt-get install -y python python-pip python-virtualenv python-dev python-crypto nginx supervisor curl locate awscli zip ruby
 
 # Copy the flask 
 RUN mkdir -p /orbital/
