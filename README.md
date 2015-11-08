@@ -6,7 +6,7 @@ A demo app that automates AWS using boto3.  This app auto deploys into a docker 
 https://hub.docker.com/r/fed007/nginx-flask/
 
 More specifically - this docker and github repo contain everything necessary to build and maintain
-a continuous integration pipeline with [ Wecker ](http://wercker.com/).  It also contains all the code
+a continuous integration pipeline with [ Wercker ](http://wercker.com/).  It also contains all the code
 necessary to auto deploy to AWS when a github push occurs. 
 
 I'll post a blog a bit later detailing how you need to configure each step.
