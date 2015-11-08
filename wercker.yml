@@ -28,18 +28,6 @@ dev:
         name:  Install Git for automated EB transport .
         code: | 
            sudo apt-get -y install git
-
-    - script:
-        name: Create AWS cred file.
-        code: |
-          mkdir ~/.aws
-          touch ~/.aws/config
-          touch ~/.aws/credentials
-          printf "[default]\n" >> ~/.aws/credentials
-          printf "aws_access_key_id=$AWS_ACCESS_KEY \n" >> ~/.aws/credentials 
-          printf "aws_access_key_id=$AWS_SECRET_KEY " >> ~/.aws/credentials 
-          printf "[default]\n" >> ~/.aws/config
-          printf "region=us-east-1" >> ~/.aws/config
     
     - internal/shell
 
@@ -106,7 +94,7 @@ deploy:
         export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
         export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
         ls -all       
-        eb init phabio-dev
+        printf "1\n1\nY\n1\n9\n1\ny\n6\n" | eb init
         eb deploy phabio-dev
 
 
