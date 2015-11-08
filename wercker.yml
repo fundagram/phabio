@@ -91,7 +91,7 @@ deploy:
         cd ../source
         echo "**** DEPLOYING FROM HERE ****"
         export AWS_SECRET_KEY_ID=$AWS_ACCESS_KEY
-        export AWS_SECRET_ACCESS_KEY_KEY=$AWS_SECRET_KEY
+        export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
         aws configure
         ls -all       
         printf "1\n1\n\9\n1\ny\n6\n" | eb init
