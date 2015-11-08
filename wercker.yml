@@ -77,14 +77,21 @@ deploy:
       source-dir: ../output
 
     - script:
+        name: Create EB Config File
+        code: |
+          mkdir $WERCKER_SOURCE_DIR/.elasticbeanstalk
+          touch $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
+          cat $WERCKER_SOURCE_DIR/phabio-dev.conf >> $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
+          cat $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
+     
+    - script:
       name: EB DEPLOY
       code: |
         cd ../source
         echo "**** DEPLOYING FROM HERE ****"
         export AWS_SECRET_KEY_ID=$AWS_ACCESS_KEY
         export AWS_SECRET_ACCESS_KEY_KEY=$AWS_SECRET_KEY
-        ls
-        eb init -e phabio-dev -k phabio-dev  --region us-east-1
+        ls        
         eb deploy phabio-dev
 
 
