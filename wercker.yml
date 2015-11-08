@@ -73,7 +73,7 @@ deploy:
 
     - script:
       code: |
-        cd ../
+        cd ../source
         echo "**** DEPLOYING FROM HERE ****"
         ls
         eb deploy phabio-dev
