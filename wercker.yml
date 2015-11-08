@@ -93,6 +93,7 @@ deploy:
         export AWS_SECRET_KEY_ID=$AWS_ACCESS_KEY
         export AWS_SECRET_ACCESS_KEY_KEY=$AWS_SECRET_KEY
         ls -all       
+        eb init
         eb deploy phabio-dev
 
 
