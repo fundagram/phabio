@@ -83,6 +83,7 @@ deploy:
           touch ../source/.elasticbeanstalk/config.yaml
           cat ../source/phabio-dev.conf >> $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
           cat ../source/.elasticbeanstalk/config.yaml
+          sudo chmod -R 776  ../source/.elasticbeanstalk
      
     - script:
       name: EB DEPLOY
@@ -91,7 +92,7 @@ deploy:
         echo "**** DEPLOYING FROM HERE ****"
         export AWS_SECRET_KEY_ID=$AWS_ACCESS_KEY
         export AWS_SECRET_ACCESS_KEY_KEY=$AWS_SECRET_KEY
-        ls        
+        ls -all       
         eb deploy phabio-dev
 
 
