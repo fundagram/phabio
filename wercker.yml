@@ -81,6 +81,8 @@ deploy:
           printf "aws_access_key_id=$AWS_SECRET_KEY" >> ~/.aws/credentials 
           printf "[default]\n" >> ~/.aws/config
           printf "region=us-east-1" >> ~/.aws/config
+          ls ~/.aws
+          aws configure
 
     - s3sync:
       key-id: $AWS_ACCESS_KEY
