@@ -61,7 +61,7 @@ deploy:
             key: $AWS_ACCESS_KEY
             secret: $AWS_SECRET_KEY
             app_name: phabio
-            env_name: staging
+            env_name: phabio-dev
             region: us-east-1
       
  
