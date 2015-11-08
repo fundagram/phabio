@@ -79,10 +79,10 @@ deploy:
     - script:
         name: Create EB Config File
         code: |
-          mkdir $WERCKER_SOURCE_DIR/.elasticbeanstalk
-          touch $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
-          cat $WERCKER_SOURCE_DIR/phabio-dev.conf >> $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
-          cat $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
+          mkdir ../source/.elasticbeanstalk
+          touch ../source/.elasticbeanstalk/config.yaml
+          cat ../source/phabio-dev.conf >> $WERCKER_SOURCE_DIR/.elasticbeanstalk/config.yaml
+          cat ../source/.elasticbeanstalk/config.yaml
      
     - script:
       name: EB DEPLOY
