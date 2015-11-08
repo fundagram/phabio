@@ -47,7 +47,7 @@ deploy:
           printf "aws_access_key_id=$AWS_SECRET_KEY " >> ~/.aws/credentials 
           printf "[default]\n" >> ~/.aws/config
           printf "region=us-east-1" >> ~/.aws/config
-        
+
 
     - script:
         name: debug step 1
@@ -73,5 +73,8 @@ deploy:
 
     - script:
       code: |
+        cd ../
+        echo "**** DEPLOYING FROM HERE ****"
+        ls
         eb deploy phabio-dev
  
