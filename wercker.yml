@@ -70,7 +70,7 @@ deploy:
           ls $WERCKER_OUTPUT_DIR
 
 
-     - script:
+    - script:
         name: Create AWS cred file.
         code: |
           mkdir ~/.aws
