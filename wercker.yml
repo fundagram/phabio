@@ -87,7 +87,7 @@ deploy:
           printf "aws_secret_access_key=$AWS_SECRET_KEY " >> ../source/aws/credentials 
           printf "[default]\n" >> ../source/aws/config
           printf "region=us-east-1" >> ../source/aws/config
-          export AWS_CONFIG_FILE =  ../source/aws/credentials
+          export AWS_CONFIG_FILE="../source/aws/credentials"
 
     - script:
         name: Create EB Config File
