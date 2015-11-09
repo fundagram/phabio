@@ -1,8 +1,6 @@
 from fabric.api import *
 
-env.hosts = [
-    '54.164.125.23'
-]
+#env.hosts = []
 
 env.user = "ubuntu"
 
@@ -22,9 +20,20 @@ def installDocker():
     print output
 
 def deployControllerNode():  
-    output = sudo("docker run -d -p 80:80 fed007/nginx-flash")
+    output = sudo("docker run -d -p 80:80 fed007/nginx-flask")
+    print output
+
+def deployKafkaNode():  
+    output = sudo("docker run -d -p 9092:9092 spotify/docker-kafka")
+    print output
+
+def deployProducerNode():  
+    output = sudo("docker run -d -p 80:80 fed007/nginx-flask")
+    print output
+
+def deployConsumerNode():  
+    output = sudo("docker run -d -p 80:80 fed007/nginx-flask")
     print output
 
 
 
-#docker run -d -p 80:80 fed007/nginx-flask
