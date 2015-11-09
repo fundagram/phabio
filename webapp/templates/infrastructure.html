@@ -1,5 +1,60 @@
 {% extends "base.html"  %}
 {% block content %}
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script>
+
+function runKafkaDeploy(){
+
+   $.get( "/kafkadeploy", function( data ) {
+         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+});
+
+
+}
+
+function runElasticDeploy(){
+
+   $.get( "/elasticdeploy", function( data ) {
+         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+});
+    
+}
+
+
+
+function runConsumerDeploy(){
+
+   $.get( "/consumerdeploy", function( data ) {
+         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+});
+
+    
+}
+
+
+
+
+function runProducerDeploy(){
+
+ $.get( "/producerdeploy", function( data ) {
+         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+});
+
+    
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+
 <div  style="padding-left:100px; padding-right:200px; padding-top:50px">
    <h1> Let's lay down some Infrastructure! </h1><br>
 

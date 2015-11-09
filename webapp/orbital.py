@@ -32,6 +32,25 @@ def nuke():
 def elastic():
     return render("elastic.html")
 
+
+
+@app.route('/kafkadeploy')
+def elastic():
+    return "deploy kafka fabric"
+
+@app.route('/elasticdeploy')
+def elastic():
+    return "deploy elastic fabric"
+
+@app.route('/consumerdeploy')
+def elastic():
+    return "deploy cosumer fabric"
+
+@app.route('/producerdeploy')
+def elastic():
+    return "deploy producer fabric"
+
+
 @app.route('/listS3')
 def listS3():
     try:
