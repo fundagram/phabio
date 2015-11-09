@@ -61,9 +61,11 @@ def launch():
 def nodes():    
     try:
         instanceList = aws.getAllNodes("t2.micro","running")
-        print instanceList   
+        #print instanceList
+        ilist = instanceList['Reservations']
+        print ilist
         
-        return Response('{ "nodes:'+json.dumps(nodeList)+'}', 200, mimetype='application/json')
+        return render("nodes.html", instances=ilist)
     except:
         traceback.print_exc()
         return Response('{ "message":"Unable to get Node List" }', 400, mimetype='application/json')

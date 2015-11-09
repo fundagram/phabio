@@ -2,11 +2,45 @@ body { margin:0px; padding:0px; font-family:Arial;}
 
 #menubox { padding-top: 10px  }
 
+#headergraphic{
+
+ background-color: black;
+ color: #00FF00;
+
+
+}
+
+
+.important{
+
+color:red;
+font-size: 22px
+
+}
+
+.subblurb {
+
+ 
+    color: #777;
+    font-style:italic;
+    font-size: 20px;
+
+
+}
+
+
+
+.bigtitle{
+
+     font-size: 66px;
+     font-family: "Helvetica";
+
+}
 
 
 .superwelcome {
 
-     margin-top: 100px;
+     margin-top: 60px;
      font-size: 25px;
      font-family: "Helvetica";
      width: 75%;

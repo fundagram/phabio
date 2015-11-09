@@ -38,15 +38,14 @@ def getAllNodes(typeFilter, stateFilter):
         ec2 = boto3.resource('ec2')
         eclient = ec2.meta.client
 
-        for n in eclient.__dict__.keys():
-            print n        
+        
         result = eclient.describe_instances( Filters=[
                                                         {'Name': 'instance-type','Values': [typeFilter, ] },
                                                         {'Name': 'instance-state-name','Values': [stateFilter, ] },
                                                       ]
                                             )
         #result = eclient.describe_instances()
-        print "EC2 result:" + str(result)
+        #print "EC2 result:" + str(result)
         return result
     except:
         traceback.print_exc()

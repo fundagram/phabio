@@ -1,19 +1,22 @@
 {% extends "base.html"  %}
 {% block content %}
-<div  style="padding-left:100px; padding-top:50px">
-   <h1> Let's Build a Cluster! Yay! </h1><br>
+<div  style="padding-left:100px; padding-right:200px; padding-top:50px">
+   <h1> Let's lay down some Infrastructure! </h1><br>
+
+   <h3  style="color:red" > If you launched this app through your own CI account at Wercker with deploy to AWS Elastic Beanstalk (All turn key) on your own then your AWS credentials will have been injected. If NOT then you are either 
+   testing out on "my creds" in a private demo (by me) or you need enter your own creds... I will shortly build an injection point for credentials to test in your own VPC. </h3>
 
 
   <form name="infra"  >
    <h3> <br><br> Here we will auto-build and auto deploy the following nodes: </h3>
    <ul>
-     <li> 1. DEPLOY -> Kafka with Zookeeper <input type=button value="DEPLOY NOW"></li>
-     <li> 2. DEPLOY -> Elastic Search with Kibana <input type=button value="DEPLOY NOW"></li>
-     <li> 3. DEPLOY -> Elastic Search Consumer Node, # Threads <input type=text name=cthreads ><input type=button value="DEPLOY NOW"> </li>
+     <li> 1. DEPLOY -> Kafka with Zookeeper <input type=button value="DEPLOY NOW" onclick=runKafkaDeploy()   ><span id=kafkaServer > </span> </li>
+     <li> 2. DEPLOY -> Elastic Search with Kibana <input type=button value="DEPLOY NOW"  onclick=runElasticDeploy() ><span id=elasticServer > </span> </li>
+     <li> 3. DEPLOY -> Elastic Search Consumer Node, # Threads <input type=text name=cthreads ><input type=button value="DEPLOY NOW"  onclick=runConsumerDeploy() > <span id=kafkaServer > </span> </li>
      <li> 4. DEPLOY -> Abstract Data Producer Node,  # Threads <input type=text name=pthreads > <br>
              Payload URL for Data Loop <input type=text name=cthreads >
              Number of Nodes to Create <input type=text name=pNodeCount >
-             <input type=button value="DEPLOY NOW"></li>
+             <input type=button value="DEPLOY NOW"  onclick=runProducerDeploy()></li>
    </ul>
     </form>
 

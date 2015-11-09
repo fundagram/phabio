@@ -2,9 +2,9 @@
 {% block login %}{% endblock %}
 {% block content %}
 <div  style="padding-left:100px; padding-top:50px">
-   <h1> Projects:  </h1><br>
+   <h1> Nodes:  </h1><br>
     <ul>
-        {%  for node in nodeList  %}
+        {%  for node in instances  %}
             <li><h3> {{ node  }} </h3></i>
         {% endfor %}
      </ul>
