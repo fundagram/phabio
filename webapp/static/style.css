@@ -1,0 +1,90 @@
+body { margin:0px; padding:0px; font-family:Arial;}
+
+#menubox { padding-top: 10px  }
+
+
+
+.superwelcome {
+
+     margin-top: 100px;
+     font-size: 25px;
+     font-family: "Helvetica";
+     width: 75%;
+     padding-left:80px ;
+
+}
+
+
+#loginform{
+   
+  padding:12px;  
+ background-color: #f2faff; 
+  margin-top:200px;
+   //border:1px solid blue;
+    display:inline-block;
+    border-radius: 7px;
+    font-family: "Arial";
+
+
+}
+
+.ldiv{
+
+    width:100%;
+    text-align: center;
+     
+
+
+}
+
+
+.tt
+{ 
+
+    border-width: 2px;
+    border-color: #cccccc;
+    border-style: solid;
+    border-radius: 7px;
+    padding: 13px;
+    font-size: 21px;
+}
+
+.logintable {
+
+    margin:50px;
+
+
+}
+
+
+.mbtn {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #afc7d6);
+  background-image: -moz-linear-gradient(top, #ffffff, #afc7d6);
+  background-image: -ms-linear-gradient(top, #ffffff, #afc7d6);
+  background-image: -o-linear-gradient(top, #ffffff, #afc7d6);
+  background-image: linear-gradient(to bottom, #ffffff, #afc7d6);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  text-shadow: 1px 1px 3px #595959;
+  font-family: Arial;
+  color: #000079;
+  font-size: 24px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.mbtn:hover {
+  background: #f2faff;
+  background-image: -webkit-linear-gradient(top, #f2faff, #7c848a);
+  background-image: -moz-linear-gradient(top, #f2faff, #7c848a);
+  background-image: -ms-linear-gradient(top, #f2faff, #7c848a);
+  background-image: -o-linear-gradient(top, #f2faff, #7c848a);
+  background-image: linear-gradient(to bottom, #f2faff, #7c848a);
+  text-decoration: none;
+  cursor: pointer;
+
+}

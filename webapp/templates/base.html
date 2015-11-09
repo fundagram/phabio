@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}  
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>{% block title %}{% endblock %} - Wercker, CI,  Kafka , Elastic Search, & Cloud Automation</title>  
+    {% endblock %}
+</head>
+<body>  
+        {% include "header.html" %}    
+
+        {% include "menu.html" %}  
+
+    <div id="content">
+       
+       {% block content %}
+          <div class=superwelcome>
+          Hey There Friends! Do you want to do something really cool?<br><br>
+
+
+          This little app I built is quite powerful and will let you laydown a Kafka as a service performance benchmark to test where you need to improve your infrastructure in order
+          to prepare for the world of real time big data and IoT.  <br>
+          <p>
+          This app also exists to demonstrate my devops skills various components I will deploy in your network with it.  It also exists to demonstrate the nature of my skills to put together complex architectures in 2-3 days ( a few hours each day ). This app is kicked off with a Docker I built at and the app is supported by my git hub repo here: 
+          </p>
+          <p> This app will depoy a Kafka Node with ZooKeeper as our central nervous systemm along with an Elastic search node with will house the incoming data.  The data will be processed by incoming "Consumer Nodes"  that can be set multi-threaded to however many you want.
+          <br><br>
+          Additionally, feeding all this data into the system will be "Producer Nodes"  that you will also create.  The Producer Nodes when created allow you the chance to specify your payloads data files .  These large data sources should be one record per line for and can be any json object format.   The producers can also multi-thread transport and will break and queue the supplied data source.
+
+          <br><br>
+          A single pub/sub stream ID will be used to push all data through.   The Producers can be set to loop or just batch mode for the data set you need to stream in.   Once you have all the proper nodes deployed ( by clicking simple buttons in this app ) you will then get a "START" button on your Cluster dashboard which will then kick off all nodes to start processing data.  
+
+          <br><bR>  The Dashboard will show you the various msg rates at the various points in your network and how you logical architecture may look.  In fact later on I'll look at a topology tool for merging logical capture points to physical node deployment points because everyone has a different architecture.
+        </p>
+
+          
+          </div>
+
+       {% endblock %}
+     
+
+    </div>
+    <div id="footer">
+        {% block footer %}      
+        {% endblock %}
+    </div>
+</body>
+</html>

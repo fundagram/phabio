@@ -1,5 +1,6 @@
 import boto3
 import botocore.session
+import traceback
 
 session = botocore.session.get_session()
 #session.profile = 'default'
@@ -24,10 +25,32 @@ def launchEC2Image():
         # load a default ami
         securityGroupdIds = ["sg-0bde6c6d"]
         print securityGroupdIds[0]
-        result = ec2.create_instances(ImageId='ami-30b6c65a', MinCount=1, MaxCount=1, KeyName="nintendo", SecurityGroupIds=securityGroupdIds)
+        result = ec2.create_instances(ImageId='ami-d05e75b8', MinCount=1, MaxCount=1, KeyName="nintendo", SecurityGroupIds=securityGroupdIds, InstanceType="t2.micro")
+        print "EC2 result:" + str(result)
         return result
     except:
+        traceback.print_exc()
         return 'failed to launch'
+
+
+def getAllNodes(typeFilter, stateFilter):
+    try:
+        ec2 = boto3.resource('ec2')
+        eclient = ec2.meta.client
+
+        for n in eclient.__dict__.keys():
+            print n        
+        result = eclient.describe_instances( Filters=[
+                                                        {'Name': 'instance-type','Values': [typeFilter, ] },
+                                                        {'Name': 'instance-state-name','Values': [stateFilter, ] },
+                                                      ]
+                                            )
+        #result = eclient.describe_instances()
+        print "EC2 result:" + str(result)
+        return result
+    except:
+        traceback.print_exc()
+        return 'failed to retrieve instances'
 
 if __name__ == "__main__":
   #listS3()
