@@ -19,7 +19,7 @@ def listS3():
     return buckets
 
 
-def launchEC2Image():
+def launchEC2Image(tag):
     try:
         ec2 = boto3.resource('ec2')
         # load a default ami
@@ -27,6 +27,22 @@ def launchEC2Image():
         print securityGroupdIds[0]
         result = ec2.create_instances(ImageId='ami-d05e75b8', MinCount=1, MaxCount=1, KeyName="nintendo", SecurityGroupIds=securityGroupdIds, InstanceType="t2.micro")
         print "EC2 result:" + str(result)
+        res = [
+          result[0].instance_id,
+        ]
+        tags = [
+                  {
+                    "Key": "Name",
+                    "Value": tag
+                  }
+
+                ]
+        print "Creating VM with Tag " + str(tags)
+        # set the tag name for this instance
+        ec2.create_tags(result[0].instance_id, Tags=tags, Resources=res)
+
+
+
         return result
     except:
         traceback.print_exc()

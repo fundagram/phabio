@@ -4,10 +4,22 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <script>
 
+
+function updateMessage(node, msg){
+
+    e = document.getElementById(node);
+    alert(e);
+    e.innerHTML = '<span class=notify >'+ msg+ '</span>';
+
+
+}
+
+
+
 function runKafkaDeploy(){
 
    $.get( "/kafkadeploy", function( data ) {
-         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+         updateMessage( "kafkaServer" , data);        
 });
 
 
@@ -16,7 +28,7 @@ function runKafkaDeploy(){
 function runElasticDeploy(){
 
    $.get( "/elasticdeploy", function( data ) {
-         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+         updateMessage( "elasticServer" , data);        
 });
     
 }
@@ -26,7 +38,7 @@ function runElasticDeploy(){
 function runConsumerDeploy(){
 
    $.get( "/consumerdeploy", function( data ) {
-         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+         updateMessage( "consumerServer" , data);        
 });
 
     
@@ -38,7 +50,7 @@ function runConsumerDeploy(){
 function runProducerDeploy(){
 
  $.get( "/producerdeploy", function( data ) {
-         alert( "Kafka Deploy Initiated - please Check infrastructure for information!" );
+          updateMessage( "#producerServer" , data);        
 });
 
     

@@ -35,20 +35,28 @@ def elastic():
 
 
 @app.route('/kafkadeploy')
-def elastic():
-    return "deploy kafka fabric"
+def kafkadeploy():
+    # here we want to deploy an instance then launch the appropriate fabric script 
+    instance = aws.launchEC2Image("KafkaServer");
+    return "Deploy Kafka VM ID = " +instance[0].id     
 
 @app.route('/elasticdeploy')
-def elastic():
-    return "deploy elastic fabric"
+def elasticdeploy():
+    # here we want to deploy an instance then launch the appropriate fabric script 
+    instance = aws.launchEC2Image("ElasticServer");
+    return "Deploy elastic fabric... VM ID = " +instance[0].id    
 
 @app.route('/consumerdeploy')
-def elastic():
-    return "deploy cosumer fabric"
+def consumerdeploy():
+    # here we want to deploy an instance then launch the appropriate fabric script 
+    instance = aws.launchEC2Image("ConsumerServer");
+    return "Deploy consumer ... VM ID = " +instance[0].id    
 
 @app.route('/producerdeploy')
-def elastic():
-    return "deploy producer fabric"
+def producerdeploy():
+    # here we want to deploy an instance then launch the appropriate fabric script 
+    instance = aws.launchEC2Image("ProducerServer");
+    return "Deploy producer... VM ID= " +instance[0].id    
 
 
 @app.route('/listS3')
